@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  app:
+    image: ubuntu:20.04
+    command: sh -c "apt-get update && 
+                    apt-get install -y python3 && 
+                    apt-get install -y dnsutils &&
+                    python3 dns_resolv_v4.py"
+    #ports:
+    #  - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    #environment:
+    #  MYSQL_HOST: mysql

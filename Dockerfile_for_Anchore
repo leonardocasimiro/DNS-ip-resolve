@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+
+WORKDIR /app
+COPY . .
+VOLUME /var/log/ingram/
+RUN apt-get update
+RUN apt-get install -y python3
+RUN apt-get install -y dnsutils
+
+#CMD ["python3","dns_resolv_v4.py"]
